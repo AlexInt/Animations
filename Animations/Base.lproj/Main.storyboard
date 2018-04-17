@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,42 +18,47 @@
                         <viewControllerLayoutGuide type="bottom" id="KQ8-dK-j0L"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg-sunny" translatesAutoresizingMaskIntoConstraints="NO" id="Xxe-U1-iIo">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg-sunny" translatesAutoresizingMaskIntoConstraints="NO" id="Xxe-U1-iIo">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg-sunny-cloud-1" translatesAutoresizingMaskIntoConstraints="NO" id="0sQ-Yp-dhN">
-                                <rect key="frame" x="-121" y="122" width="159" height="50"/>
+                                <rect key="frame" x="-121" y="136" width="159" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg-sunny-cloud-2" translatesAutoresizingMaskIntoConstraints="NO" id="ZAm-Y2-GVh">
-                                <rect key="frame" x="212" y="158" width="158" height="49"/>
+                                <rect key="frame" x="250" y="176" width="158" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg-sunny-cloud-4" translatesAutoresizingMaskIntoConstraints="NO" id="484-hd-53b">
-                                <rect key="frame" x="56" y="380" width="115" height="50"/>
+                                <rect key="frame" x="64" y="422" width="115" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bahama Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yXV-4m-mjQ">
-                                <rect key="frame" x="100" y="80" width="175" height="34"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bahama Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yXV-4m-mjQ">
+                                <rect key="frame" x="119.66666666666669" y="80" width="175" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="28"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ypg-na-nhX">
-                                <rect key="frame" x="46" y="144" width="282" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ypg-na-nhX">
+                                <rect key="frame" x="50" y="144" width="313" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" keyboardType="alphabet" keyboardAppearance="light" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2MY-Kr-3lo">
-                                <rect key="frame" x="46" y="189" width="282" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2MY-Kr-3lo">
+                                <rect key="frame" x="50" y="189" width="313" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" keyboardType="alphabet" keyboardAppearance="light" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MNi-qL-ghQ">
-                                <rect key="frame" x="71" y="239" width="233" height="46"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MNi-qL-ghQ">
+                                <rect key="frame" x="75" y="239" width="264" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.62745098040000002" green="0.83921568629999999" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="28"/>
                                 <color key="tintColor" red="0.0" green="0.40784313729999999" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -63,28 +67,11 @@
                                 </state>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg-sunny-cloud-3" translatesAutoresizingMaskIntoConstraints="NO" id="TUe-QG-way">
-                                <rect key="frame" x="266" y="326" width="74" height="35"/>
+                                <rect key="frame" x="300" y="362" width="74" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="MNi-qL-ghQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="55" id="2Kq-UJ-BSX"/>
-                            <constraint firstItem="Ypg-na-nhX" firstAttribute="top" secondItem="yXV-4m-mjQ" secondAttribute="bottom" constant="30" id="B6W-yc-Pi2"/>
-                            <constraint firstAttribute="trailing" secondItem="Xxe-U1-iIo" secondAttribute="trailing" id="BlY-ML-db3"/>
-                            <constraint firstItem="MNi-qL-ghQ" firstAttribute="top" secondItem="2MY-Kr-3lo" secondAttribute="bottom" constant="20" id="Gdb-xY-FyR"/>
-                            <constraint firstItem="2MY-Kr-3lo" firstAttribute="top" secondItem="Ypg-na-nhX" secondAttribute="bottom" constant="15" id="J4d-KN-hVr"/>
-                            <constraint firstItem="Ypg-na-nhX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="RQn-dW-bUI"/>
-                            <constraint firstItem="2MY-Kr-3lo" firstAttribute="centerX" secondItem="Ypg-na-nhX" secondAttribute="centerX" id="SQ8-dV-gkx"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="MNi-qL-ghQ" secondAttribute="trailing" constant="55" id="UJU-4e-YG9"/>
-                            <constraint firstItem="2MY-Kr-3lo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="UMy-jr-9pj"/>
-                            <constraint firstItem="Ypg-na-nhX" firstAttribute="centerX" secondItem="yXV-4m-mjQ" secondAttribute="centerX" id="YCn-RW-X7M"/>
-                            <constraint firstItem="yXV-4m-mjQ" firstAttribute="centerX" secondItem="Xxe-U1-iIo" secondAttribute="centerX" id="cX2-NG-j6x"/>
-                            <constraint firstItem="yXV-4m-mjQ" firstAttribute="top" secondItem="Dhr-ei-cbT" secondAttribute="bottom" constant="60" id="jQH-Nk-uJm"/>
-                            <constraint firstItem="KQ8-dK-j0L" firstAttribute="top" secondItem="Xxe-U1-iIo" secondAttribute="bottom" id="jWx-UW-rrc"/>
-                            <constraint firstItem="Xxe-U1-iIo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pJc-rl-rdU"/>
-                            <constraint firstItem="Xxe-U1-iIo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="wX8-cm-qG9"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="cloud1" destination="0sQ-Yp-dhN" id="3M9-Kx-Hsh"/>
@@ -103,7 +90,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bg-sunny" width="320" height="568"/>
+        <image name="bg-sunny" width="213" height="378"/>
         <image name="bg-sunny-cloud-1" width="159" height="50"/>
         <image name="bg-sunny-cloud-2" width="138" height="49"/>
         <image name="bg-sunny-cloud-3" width="74" height="35"/>
