@@ -16,7 +16,6 @@ func delay(_ seconds: Double, completion: @escaping ()->Void) {
 class ViewController: UIViewController {
     
     // MARK: IB outlets
-    
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var heading: UILabel!
     @IBOutlet weak var username: UITextField!
@@ -27,8 +26,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var cloud3: UIImageView!
     @IBOutlet weak var cloud4: UIImageView!
     
-    // MARK: further UI
-    
+    // MARK: other variable
     let spinner = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
     let status = UIImageView(image: UIImage(named: "banner"))
     let label = UILabel()
@@ -36,18 +34,19 @@ class ViewController: UIViewController {
     
     var statusPosition = CGPoint.zero
     
-    var animationContainerView: UIView!
-    
-    var newView: UIView!
-    
-    // MARK: view controller methods
-    
+}
+
+
+//MARK: viewcontroller  lifecycle methods
+extension ViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //set up the UI
         loginButton.layer.cornerRadius = 8.0
         loginButton.layer.masksToBounds = true
+        loginButton.isEnabled = true;
         
         spinner.frame = CGRect(x: -20.0, y: 6.0, width: 20.0, height: 20.0)
         spinner.startAnimating()
@@ -64,12 +63,8 @@ class ViewController: UIViewController {
         label.textAlignment = .center
         status.addSubview(label)
         
-        //set up the animation container
-        animationContainerView = UIView(frame: view.bounds);
-        animationContainerView.frame = view.bounds;
-        view.addSubview(animationContainerView);
-        
-
+        //save the banner's initial position
+        statusPosition = status.center;
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -136,11 +131,40 @@ class ViewController: UIViewController {
             self.loginButton.alpha = 1.0;
         }, completion: nil);
         
-        //create new view
-        newView = UIImageView(image: #imageLiteral(resourceName: "banner"));
-        newView.center = animationContainerView.center;
+    }
+}
+
+//MARK: IBAction method
+extension ViewController {
+    
+    @IBAction func login() {
+        view.endEditing(true)
         
-        //add the new view via transition
+        UIView.animate(withDuration: 1.5, delay: 0.0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.0, options: [], animations: {
+            self.loginButton.bounds.size.width += 90.0;
+        }) { _ in
+            self.loginButton.isEnabled = false;
+        };
+        
+        UIView.animate(withDuration: 0.3, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: [], animations: {
+            self.loginButton.center.y += 60.0;
+            self.loginButton.backgroundColor = UIColor(red: 0.85, green: 0.83, blue: 0.45, alpha: 1.0);
+            self.spinner.center = CGPoint(
+                x: 40.0,
+                y: self.loginButton.frame.size.height/2);
+            self.spinner.alpha = 1.0;
+        }){_ in
+            self.showMessage(index: 0);
+        };
+    }
+}
+
+//MARK: private methods
+extension ViewController {
+    
+    private func showMessage(index: Int) {
+        label.text = messages[index];
+        
         /*
          • .transitionFlipFromLeft     //从左向右翻转
          • .transitionFlipFromRight    //从右向左翻转
@@ -150,44 +174,39 @@ class ViewController: UIViewController {
          • .transitionCurlDown         //向日历一样的翻页-向下翻转
          • .transitionCrossDissolve    //由透明到不透明改变
          */
-        UIView.transition(with: animationContainerView, duration: 1.0, options: [.curveEaseOut, .transitionFlipFromBottom], animations: {
-            self.animationContainerView.addSubview(self.newView)
-        }, completion: nil);
-
-        delay(5) {
-            UIView.transition(with: self.animationContainerView, duration: 1.0, options: [.curveEaseOut, .transitionFlipFromBottom], animations: {
-//                self.newView.removeFromSuperview();
-                self.newView.isHidden = true;
-            }, completion: nil);
+        UIView.transition(with: status, duration: 0.33, options: [.curveEaseOut, .transitionCurlDown], animations: {
+            self.status.isHidden = false
+        }){_ in
+            //transiton complete
+            delay(2.0, completion: {
+                if index < self.messages.count-1 {
+                    self.removeMessage(index: index);
+                } else {
+                    //reset form
+                }
+            });
+            
         };
-        
     }
     
-    // MARK: further methods
-    
-    @IBAction func login() {
-        view.endEditing(true)
-        UIView.animate(withDuration: 1.5, delay: 0.0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.0, options: [], animations: {
-            self.loginButton.bounds.size.width += 90.0;
-        }, completion: nil);
-        
-        UIView.animate(withDuration: 0.3, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: [], animations: {
-            self.loginButton.center.y += 60.0;
-            self.loginButton.backgroundColor = UIColor(red: 0.85, green: 0.83, blue: 0.45, alpha: 1.0);
-            self.spinner.center = CGPoint(
-                x: 40.0,
-                y: self.loginButton.frame.size.height/2);
-            self.spinner.alpha = 1.0;
-        }, completion: nil);
+   private func removeMessage(index: Int) {
+        UIView.animate(withDuration: 0.33, delay: 0.0, options: [], animations: {
+            self.status.center.x += self.view.frame.size.width;
+        }) { _ in
+            self.status.isHidden = true;
+            self.status.center = self.statusPosition;
+            self.showMessage(index: index);
+        };
     }
     
-    // MARK: UITextFieldDelegate
+}
+
+// MARK: UITextFieldDelegate
+extension ViewController {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         let nextField = (textField === username) ? password : username
         nextField?.becomeFirstResponder()
         return true
     }
-    
 }
-
