@@ -160,7 +160,7 @@ extension ViewController {
                 y: self.loginButton.frame.size.height/2);
             self.spinner.alpha = 1.0;
         }){_ in
-            self.showMessage(index: 0);
+            self.showMessage(index: 0);  //首次展示给一个初始值0;
         };
     }
 }
@@ -202,16 +202,18 @@ extension ViewController {
             self.status.isHidden = true;
             self.status.center = self.statusPosition;
             
-            self.showMessage(index: index+1);
+            self.showMessage(index: index+1);  //对index每次加1，进行数组遍历，知道展示出所有数据
         };
     }
     
     private func resetForm() {
+        //banner 复位
         UIView.animate(withDuration: 0.2, delay: 0.0, options: [.curveEaseOut, .transitionCurlUp], animations: {
             self.status.isHidden = true;
             self.status.center = self.statusPosition;
         }, completion:nil );
         
+        //spinner 和 button 复位
         UIView.animate(withDuration: 0.2, delay: 0.0, options: [], animations: {
             self.spinner.center = CGPoint(x: -20.0, y: 16.0);
             self.spinner.alpha = 0.0;
