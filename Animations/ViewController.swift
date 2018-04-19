@@ -34,6 +34,8 @@ class ViewController: UIViewController {
     
     var statusPosition = CGPoint.zero
     
+    
+    
 }
 
 
@@ -126,11 +128,15 @@ extension ViewController {
          usingSpringWithDamping: 弹簧的硬度或粘度(可以立即为阻力) 0.0 - 1.0
          initialSpringVelocity:  弹簧的初始速度 0.0 - 1，0
          */
-        UIView.animate(withDuration: 3.0, delay: 0.5, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.0, options: [], animations: {
+        UIView.animate(withDuration: 0.5, delay: 0.5, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.0, options: [], animations: {
             self.loginButton.center.y -= 30.0;
             self.loginButton.alpha = 1.0;
         }, completion: nil);
         
+        animateCloud(cloud: cloud1);
+        animateCloud(cloud: cloud2);
+        animateCloud(cloud: cloud3);
+        animateCloud(cloud: cloud4);
     }
 }
 
@@ -183,9 +189,9 @@ extension ViewController {
                     self.removeMessage(index: index);
                 } else {
                     //reset form
+                    self.resetForm();
                 }
             });
-            
         };
     }
     
@@ -195,7 +201,34 @@ extension ViewController {
         }) { _ in
             self.status.isHidden = true;
             self.status.center = self.statusPosition;
-            self.showMessage(index: index);
+            
+            self.showMessage(index: index+1);
+        };
+    }
+    
+    private func resetForm() {
+        UIView.animate(withDuration: 0.2, delay: 0.0, options: [.curveEaseOut, .transitionCurlUp], animations: {
+            self.status.isHidden = true;
+            self.status.center = self.statusPosition;
+        }, completion:nil );
+        
+        UIView.animate(withDuration: 0.2, delay: 0.0, options: [], animations: {
+            self.spinner.center = CGPoint(x: -20.0, y: 16.0);
+            self.spinner.alpha = 0.0;
+            self.loginButton.backgroundColor = UIColor(red: 0.63, green: 0.84, blue: 0.35, alpha: 1.0);
+            self.loginButton.bounds.size.width -= 80.0;
+            self.loginButton.bounds.origin.y -= 60.0;
+        }, completion: nil);
+    }
+    
+    private func animateCloud(cloud: UIImageView) {
+        let cloudSpeed = (60.0 / view.frame.size.width);
+        let cloudAnimationDuration = (view.frame.size.width - cloud.frame.origin.x) * cloudSpeed;
+        UIView.animate(withDuration: TimeInterval(cloudAnimationDuration), delay: 0.0, options: .curveLinear, animations: {
+            cloud.frame.origin.x = self.view.frame.size.width;
+        }) { _ in
+            cloud.frame.origin.x = -cloud.frame.size.width;
+            self.animateCloud(cloud: cloud);
         };
     }
     
