@@ -12,6 +12,12 @@
 		77630E742084B255006B0071 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77630E722084B255006B0071 /* Main.storyboard */; };
 		77630E762084B257006B0071 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77630E752084B257006B0071 /* Assets.xcassets */; };
 		77630E792084B257006B0071 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77630E772084B257006B0071 /* LaunchScreen.storyboard */; };
+		77D1C0662088AC470020E93D /* FlightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D1C0642088AC470020E93D /* FlightViewController.swift */; };
+		77D1C0672088AC470020E93D /* FlightViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77D1C0652088AC470020E93D /* FlightViewController.xib */; };
+		77D1C06B2088AC970020E93D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D1C0692088AC970020E93D /* LoginViewController.swift */; };
+		77D1C06C2088AC970020E93D /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77D1C06A2088AC970020E93D /* LoginViewController.xib */; };
+		77D1C06F2088ADD80020E93D /* AnimationNavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D1C06E2088ADD80020E93D /* AnimationNavigationVC.swift */; };
+		77D1C0722088B6F30020E93D /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D1C0712088B6F30020E93D /* Tools.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +28,12 @@
 		77630E752084B257006B0071 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		77630E782084B257006B0071 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		77630E7A2084B257006B0071 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77D1C0642088AC470020E93D /* FlightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightViewController.swift; sourceTree = "<group>"; };
+		77D1C0652088AC470020E93D /* FlightViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlightViewController.xib; sourceTree = "<group>"; };
+		77D1C0692088AC970020E93D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		77D1C06A2088AC970020E93D /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		77D1C06E2088ADD80020E93D /* AnimationNavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationNavigationVC.swift; sourceTree = "<group>"; };
+		77D1C0712088B6F30020E93D /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +67,43 @@
 			isa = PBXGroup;
 			children = (
 				77630E6E2084B255006B0071 /* AppDelegate.swift */,
+				77D1C06E2088ADD80020E93D /* AnimationNavigationVC.swift */,
 				77630E702084B255006B0071 /* ViewController.swift */,
+				77D1C0702088B6D80020E93D /* Tools */,
+				77D1C06D2088ACA50020E93D /* Flight */,
+				77D1C0682088AC750020E93D /* Login */,
 				77630E722084B255006B0071 /* Main.storyboard */,
 				77630E752084B257006B0071 /* Assets.xcassets */,
 				77630E772084B257006B0071 /* LaunchScreen.storyboard */,
 				77630E7A2084B257006B0071 /* Info.plist */,
 			);
 			path = Animations;
+			sourceTree = "<group>";
+		};
+		77D1C0682088AC750020E93D /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				77D1C0692088AC970020E93D /* LoginViewController.swift */,
+				77D1C06A2088AC970020E93D /* LoginViewController.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		77D1C06D2088ACA50020E93D /* Flight */ = {
+			isa = PBXGroup;
+			children = (
+				77D1C0642088AC470020E93D /* FlightViewController.swift */,
+				77D1C0652088AC470020E93D /* FlightViewController.xib */,
+			);
+			path = Flight;
+			sourceTree = "<group>";
+		};
+		77D1C0702088B6D80020E93D /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				77D1C0712088B6F30020E93D /* Tools.swift */,
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,6 +165,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77D1C06C2088AC970020E93D /* LoginViewController.xib in Resources */,
+				77D1C0672088AC470020E93D /* FlightViewController.xib in Resources */,
 				77630E792084B257006B0071 /* LaunchScreen.storyboard in Resources */,
 				77630E762084B257006B0071 /* Assets.xcassets in Resources */,
 				77630E742084B255006B0071 /* Main.storyboard in Resources */,
@@ -136,8 +180,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77D1C06B2088AC970020E93D /* LoginViewController.swift in Sources */,
 				77630E712084B255006B0071 /* ViewController.swift in Sources */,
+				77D1C06F2088ADD80020E93D /* AnimationNavigationVC.swift in Sources */,
+				77D1C0722088B6F30020E93D /* Tools.swift in Sources */,
 				77630E6F2084B255006B0071 /* AppDelegate.swift in Sources */,
+				77D1C0662088AC470020E93D /* FlightViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
