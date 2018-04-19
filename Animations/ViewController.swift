@@ -36,6 +36,10 @@ class ViewController: UIViewController {
     
     var statusPosition = CGPoint.zero
     
+    var animationContainerView: UIView!
+    
+    var newView: UIView!
+    
     // MARK: view controller methods
     
     override func viewDidLoad() {
@@ -59,6 +63,13 @@ class ViewController: UIViewController {
         label.textColor = UIColor(red: 0.89, green: 0.38, blue: 0.0, alpha: 1.0)
         label.textAlignment = .center
         status.addSubview(label)
+        
+        //set up the animation container
+        animationContainerView = UIView(frame: view.bounds);
+        animationContainerView.frame = view.bounds;
+        view.addSubview(animationContainerView);
+        
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -124,6 +135,32 @@ class ViewController: UIViewController {
             self.loginButton.center.y -= 30.0;
             self.loginButton.alpha = 1.0;
         }, completion: nil);
+        
+        //create new view
+        newView = UIImageView(image: #imageLiteral(resourceName: "banner"));
+        newView.center = animationContainerView.center;
+        
+        //add the new view via transition
+        /*
+         • .transitionFlipFromLeft     //从左向右翻转
+         • .transitionFlipFromRight    //从右向左翻转
+         • .transitionFlipFromTop      //从顶部向下翻转
+         • .transitionFlipFromBottom   //从底部向上翻转
+         • .transitionCurlUp           //向日历一样的翻页-向上翻转
+         • .transitionCurlDown         //向日历一样的翻页-向下翻转
+         • .transitionCrossDissolve    //由透明到不透明改变
+         */
+        UIView.transition(with: animationContainerView, duration: 1.0, options: [.curveEaseOut, .transitionFlipFromBottom], animations: {
+            self.animationContainerView.addSubview(self.newView)
+        }, completion: nil);
+
+        delay(5) {
+            UIView.transition(with: self.animationContainerView, duration: 1.0, options: [.curveEaseOut, .transitionFlipFromBottom], animations: {
+//                self.newView.removeFromSuperview();
+                self.newView.isHidden = true;
+            }, completion: nil);
+        };
+        
     }
     
     // MARK: further methods
@@ -137,7 +174,9 @@ class ViewController: UIViewController {
         UIView.animate(withDuration: 0.3, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: [], animations: {
             self.loginButton.center.y += 60.0;
             self.loginButton.backgroundColor = UIColor(red: 0.85, green: 0.83, blue: 0.45, alpha: 1.0);
-            self.spinner.center = CGPoint(x: 40.0, y: self.loginButton.frame.size.height/2);
+            self.spinner.center = CGPoint(
+                x: 40.0,
+                y: self.loginButton.frame.size.height/2);
             self.spinner.alpha = 1.0;
         }, completion: nil);
     }
