@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		77106DE22089CA8F00634D18 /* KeyFrameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77106DE02089CA8F00634D18 /* KeyFrameViewController.swift */; };
+		77106DE32089CA8F00634D18 /* KeyFrameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77106DE12089CA8F00634D18 /* KeyFrameViewController.xib */; };
+		77106DE52089CF6800634D18 /* SnowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77106DE42089CF6800634D18 /* SnowView.swift */; };
+		77106DE72089CF8700634D18 /* FlightData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77106DE62089CF8700634D18 /* FlightData.swift */; };
 		77630E6F2084B255006B0071 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77630E6E2084B255006B0071 /* AppDelegate.swift */; };
 		77630E712084B255006B0071 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77630E702084B255006B0071 /* ViewController.swift */; };
 		77630E742084B255006B0071 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77630E722084B255006B0071 /* Main.storyboard */; };
@@ -15,6 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		77106DE02089CA8F00634D18 /* KeyFrameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyFrameViewController.swift; sourceTree = "<group>"; };
+		77106DE12089CA8F00634D18 /* KeyFrameViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyFrameViewController.xib; sourceTree = "<group>"; };
+		77106DE42089CF6800634D18 /* SnowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnowView.swift; sourceTree = "<group>"; };
+		77106DE62089CF8700634D18 /* FlightData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightData.swift; sourceTree = "<group>"; };
 		77630E6B2084B255006B0071 /* Animations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Animations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77630E6E2084B255006B0071 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77630E702084B255006B0071 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +63,10 @@
 			isa = PBXGroup;
 			children = (
 				77630E6E2084B255006B0071 /* AppDelegate.swift */,
+				77106DE02089CA8F00634D18 /* KeyFrameViewController.swift */,
+				77106DE42089CF6800634D18 /* SnowView.swift */,
+				77106DE62089CF8700634D18 /* FlightData.swift */,
+				77106DE12089CA8F00634D18 /* KeyFrameViewController.xib */,
 				77630E702084B255006B0071 /* ViewController.swift */,
 				77630E722084B255006B0071 /* Main.storyboard */,
 				77630E752084B257006B0071 /* Assets.xcassets */,
@@ -125,6 +137,7 @@
 			files = (
 				77630E792084B257006B0071 /* LaunchScreen.storyboard in Resources */,
 				77630E762084B257006B0071 /* Assets.xcassets in Resources */,
+				77106DE32089CA8F00634D18 /* KeyFrameViewController.xib in Resources */,
 				77630E742084B255006B0071 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,7 +150,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				77630E712084B255006B0071 /* ViewController.swift in Sources */,
+				77106DE72089CF8700634D18 /* FlightData.swift in Sources */,
+				77106DE22089CA8F00634D18 /* KeyFrameViewController.swift in Sources */,
 				77630E6F2084B255006B0071 /* AppDelegate.swift in Sources */,
+				77106DE52089CF6800634D18 /* SnowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
