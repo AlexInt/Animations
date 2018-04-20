@@ -8,5 +8,4 @@
 
 import UIKit
 
-let kMainThemeColor = UIColor(red: 53, green: 196, blue: 241, alpha: 1.0);
-
+let kMainThemeColor = UIColor(red: 0, green: 155, blue: 223, alpha: 1.0);

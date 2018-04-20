@@ -50,6 +50,8 @@ class AnimationNavigationVC: UINavigationController {
         }
     }
     
+    
+    
 }
 
 //MARK: private methods
