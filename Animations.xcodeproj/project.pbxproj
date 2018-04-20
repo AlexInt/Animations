@@ -43,6 +43,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		77106DE82089D5D100634D18 /* Flight info */ = {
+			isa = PBXGroup;
+			children = (
+				77106DE02089CA8F00634D18 /* KeyFrameViewController.swift */,
+				77106DE12089CA8F00634D18 /* KeyFrameViewController.xib */,
+				77106DE42089CF6800634D18 /* SnowView.swift */,
+				77106DE62089CF8700634D18 /* FlightData.swift */,
+			);
+			path = "Flight info";
+			sourceTree = "<group>";
+		};
 		77630E622084B255006B0071 = {
 			isa = PBXGroup;
 			children = (
@@ -63,10 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				77630E6E2084B255006B0071 /* AppDelegate.swift */,
-				77106DE02089CA8F00634D18 /* KeyFrameViewController.swift */,
-				77106DE42089CF6800634D18 /* SnowView.swift */,
-				77106DE62089CF8700634D18 /* FlightData.swift */,
-				77106DE12089CA8F00634D18 /* KeyFrameViewController.xib */,
+				77106DE82089D5D100634D18 /* Flight info */,
 				77630E702084B255006B0071 /* ViewController.swift */,
 				77630E722084B255006B0071 /* Main.storyboard */,
 				77630E752084B257006B0071 /* Assets.xcassets */,

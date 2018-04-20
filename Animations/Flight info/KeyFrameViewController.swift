@@ -69,6 +69,7 @@ extension KeyFrameViewController {
         arrivingTo.text = data.arrivingTo
         flightStatus.text = data.flightStatus
         if animated {
+            planeDepart();
             fade(imageView: bgImageView, toImage: UIImage(named: data.weatherImageName)!, showEffects: data.showWeatherEffects);
             
             let direction: AnimationDirection = data.isTakingOff ? .positive : .negative;
@@ -89,6 +90,8 @@ extension KeyFrameViewController {
             
             cubeTransition(label: flightStatus, text: data.flightStatus, direction: direction);
             
+            summarySwitch(to: data.summary);
+            
         } else{
             bgImageView.image = UIImage(named: data.weatherImageName)
             snowView.isHidden = !data.showWeatherEffects
@@ -108,6 +111,7 @@ extension KeyFrameViewController {
         }
     }
     
+    //背景图转换的动画
     private func fade(imageView: UIImageView, toImage: UIImage, showEffects: Bool) {
         UIView.transition(with: imageView, duration: 1.0, options: .transitionCrossDissolve, animations: {
             imageView.image = toImage;
@@ -118,6 +122,7 @@ extension KeyFrameViewController {
         }, completion: nil);
     }
     
+    //航班和登机口号码的翻转动画
     private func cubeTransition(label: UILabel, text: String, direction: AnimationDirection) {
         let auxLabel = UILabel(frame: label.frame);
         auxLabel.text = text;
@@ -147,6 +152,7 @@ extension KeyFrameViewController {
         };
     }
     
+    //出发和到达机场地点展示的动画
     private func moveLabel(label: UILabel, text: String, offset: CGPoint) {
         let auxLabel = UILabel(frame: label.frame);
         auxLabel.text = text;
@@ -175,5 +181,63 @@ extension KeyFrameViewController {
             label.transform = .identity;
         };
     }
+    
+    //飞机离开->回来的动画
+    private func planeDepart() {
+        let originalCenter = planeImage.center;
+        UIView.animateKeyframes(withDuration: 1.5, delay: 0.0, options: [], animations: {
+            //add key frame
+            /*
+             RelativeStartTime  相对开始时间，相对上面的duration : 1.5; 10%就是0.1，100%就是1.0
+             relativeDuration   相对持续时间，相对上面的duration : 1.5; 25%就是0.25，100%就是1.0
+             */
+            //向右上方
+            UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.25, animations: {
+                self.planeImage.center.x += 80.0;
+                self.planeImage.center.y -= 10.0;
+            });
+            //旋转
+            UIView.addKeyframe(withRelativeStartTime: 0.1, relativeDuration: 0.4, animations: {
+                self.planeImage.transform = CGAffineTransform(rotationAngle: -.pi/8);
+            });
+            //隐藏
+            UIView.addKeyframe(withRelativeStartTime: 0.25, relativeDuration: 0.25, animations: {
+                self.planeImage.center.x += 100.0;
+                self.planeImage.center.y -= 50.0;
+                self.planeImage.alpha = 0.0;
+            });
+            //将飞机的位置放置在左边，但隐身
+            UIView.addKeyframe(withRelativeStartTime: 0.51, relativeDuration: 0.01, animations: {
+                self.planeImage.transform = .identity;
+                self.planeImage.center = CGPoint(x: 0.0,
+                                                 y: originalCenter.y);
+            });
+            //逐渐出现
+            UIView.addKeyframe(withRelativeStartTime: 0.55, relativeDuration: 0.45, animations: {
+                self.planeImage.alpha = 1.0;
+                self.planeImage.center = originalCenter;
+            });
+        }, completion: nil);
+    }
+    
+    //处理顶部日期的上升和下降动画
+    private func summarySwitch(to text: String) {
+        let summaryCenter = summary.center;
+        UIView.animateKeyframes(withDuration: 1.0, delay: 0.0, options: [], animations: {
+            
+            UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.45, animations: {
+                self.summary.center.y -= 100.0;
+            });
+            
+            UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.45, animations: {
+                self.summary.center = summaryCenter;
+            });
+        }, completion: nil);
+        
+        delay(0.5) {
+            self.summary.text = text;
+        }
+    }
+    
 }
 
