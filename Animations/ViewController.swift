@@ -143,6 +143,7 @@ extension ViewController {
 //MARK: IBAction method
 extension ViewController {
     
+    //Spring 动画
     @IBAction func login() {
         view.endEditing(true)
         
@@ -168,6 +169,7 @@ extension ViewController {
 //MARK: private methods
 extension ViewController {
     
+    //过渡动画
     private func showMessage(index: Int) {
         label.text = messages[index];
         
