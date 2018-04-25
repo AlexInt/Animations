@@ -33,9 +33,6 @@ class ViewController: UIViewController {
     let messages = ["Connecting ...", "Authorizing ...", "Sending credentials ...", "Failed"]
     
     var statusPosition = CGPoint.zero
-    
-    
-    
 }
 
 
@@ -44,7 +41,7 @@ extension ViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        launchAnimation()
         //set up the UI
         loginButton.layer.cornerRadius = 8.0
         loginButton.layer.masksToBounds = true
@@ -73,9 +70,7 @@ extension ViewController {
         super.viewWillAppear(animated)
         
         //将label和textfield移到左边一个屏幕宽度
-        heading.center.x -= view.bounds.width;
-        username.center.x -= view.bounds.width;
-        password.center.x -= view.bounds.width;
+        toggleAnimations(byType: TargetType.num)
         
         //对云形的图片---设置动画初始值
         cloud1.alpha = 0.0;
@@ -90,26 +85,8 @@ extension ViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        //添加一个移动复位的动画
-        UIView.animate(withDuration: 0.5) {
-            self.heading.center.x += self.view.bounds.width;
-        };
-        //[] means no special options
-        //[] 空数组意味着没有需要指定的动画定制选项。
-        UIView.animate(withDuration: 0.5, delay: 0.3, options: [], animations: {
-            self.username.center.x += self.view.bounds.width;
-        }, completion: nil);
-        /*
-         UIViewAnimationOptions
-         .repeat : 重复执行animations闭包中的代码
-         .autoreverse : 对动画的轨迹进行反向运动
-         两个一起可以构成一种来回不断移动的动画效果
-         options参数的数组中有一个元素是可以直接写一个元素，而不必写[]包围这个元素
-         */
-        //.repeat, .autoreverse, .curveEaseIn
-        UIView.animate(withDuration: 0.5, delay: 0.4, options: [], animations: {
-            self.password.center.x += self.view.bounds.width;
-        }, completion: nil);
+        self.showViewAnimation(byType: TargetType.num)
+        
         
         UIView.animate(withDuration: 0.5, delay: 0.5, options: [], animations: {
             self.cloud1.alpha = 1;
@@ -236,6 +213,33 @@ extension ViewController {
         };
     }
     
+    //播放启动画面动画
+    private func launchAnimation() {
+        //获取启动视图
+        let vc = UIStoryboard(name: "LaunchScreen", bundle: nil)
+            .instantiateViewController(withIdentifier: "launch")
+        let launchview = vc.view!
+        let titleLabel = launchview.viewWithTag(100) as! UILabel;
+        if TargetType.num == 1 {
+            titleLabel.text = "UIView Animations";
+        }else if TargetType.num == 2 {
+            titleLabel.text = "Layer Animations";
+        }
+        let delegate = UIApplication.shared.delegate
+        delegate?.window!!.addSubview(launchview)
+        //self.view.addSubview(launchview) //如果没有导航栏，直接添加到当前的view即可
+       
+        //播放动画效果，完毕后将其移除
+        UIView.animate(withDuration: 1, delay: 1.5, options: .beginFromCurrentState,
+                       animations: {
+                        launchview.alpha = 0.0
+                        let transform = CATransform3DScale(CATransform3DIdentity, 1.5, 1.5, 1.0)
+                        launchview.layer.transform = transform
+        }) { (finished) in
+            launchview.removeFromSuperview()
+        }
+    }
+    
 }
 
 // MARK: UITextFieldDelegate
@@ -247,3 +251,4 @@ extension ViewController {
         return true
     }
 }
+

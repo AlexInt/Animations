@@ -17,6 +17,19 @@
 		77106DF72089F30500634D18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77106DF62089F30500634D18 /* Assets.xcassets */; };
 		77106DFA2089F30500634D18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77106DF82089F30500634D18 /* LaunchScreen.storyboard */; };
 		77106E002089F50100634D18 /* HorizontalItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77106DFF2089F50100634D18 /* HorizontalItemList.swift */; };
+		773E75C820902E3A0052759E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77630E702084B255006B0071 /* ViewController.swift */; };
+		773E75C920902E3A0052759E /* FlightData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77106DE62089CF8700634D18 /* FlightData.swift */; };
+		773E75CA20902E3A0052759E /* KeyFrameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77106DE02089CA8F00634D18 /* KeyFrameViewController.swift */; };
+		773E75CB20902E3A0052759E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77630E6E2084B255006B0071 /* AppDelegate.swift */; };
+		773E75CC20902E3A0052759E /* SnowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77106DE42089CF6800634D18 /* SnowView.swift */; };
+		773E75CF20902E3A0052759E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77630E772084B257006B0071 /* LaunchScreen.storyboard */; };
+		773E75D020902E3A0052759E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77630E752084B257006B0071 /* Assets.xcassets */; };
+		773E75D120902E3A0052759E /* KeyFrameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77106DE12089CA8F00634D18 /* KeyFrameViewController.xib */; };
+		773E75D220902E3A0052759E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77630E722084B255006B0071 /* Main.storyboard */; };
+		773E75DB209030BD0052759E /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773E75DA209030BD0052759E /* TargetType.swift */; };
+		773E75DD209030CC0052759E /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773E75DC209030CC0052759E /* TargetType.swift */; };
+		773E75E1209031390052759E /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773E75E0209031390052759E /* ViewControllerExtension.swift */; };
+		773E75E2209031390052759E /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773E75E0209031390052759E /* ViewControllerExtension.swift */; };
 		77630E6F2084B255006B0071 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77630E6E2084B255006B0071 /* AppDelegate.swift */; };
 		77630E712084B255006B0071 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77630E702084B255006B0071 /* ViewController.swift */; };
 		77630E742084B255006B0071 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77630E722084B255006B0071 /* Main.storyboard */; };
@@ -37,6 +50,11 @@
 		77106DF92089F30500634D18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		77106DFB2089F30500634D18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77106DFF2089F50100634D18 /* HorizontalItemList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalItemList.swift; sourceTree = "<group>"; };
+		773E75D620902E3A0052759E /* LayerAnimations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LayerAnimations.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		773E75D720902E3A0052759E /* Animations_layer.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Animations_layer.plist; path = /Users/jeremywang/Downloads/Animations/Animations_layer.plist; sourceTree = "<absolute>"; };
+		773E75DA209030BD0052759E /* TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
+		773E75DC209030CC0052759E /* TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
+		773E75E0209031390052759E /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		77630E6B2084B255006B0071 /* Animations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Animations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77630E6E2084B255006B0071 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77630E702084B255006B0071 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -48,6 +66,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		77106DEA2089F30100634D18 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		773E75CD20902E3A0052759E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -89,6 +114,23 @@
 			path = Package;
 			sourceTree = "<group>";
 		};
+		773E75D8209030920052759E /* View Animation */ = {
+			isa = PBXGroup;
+			children = (
+				773E75DA209030BD0052759E /* TargetType.swift */,
+			);
+			path = "View Animation";
+			sourceTree = "<group>";
+		};
+		773E75D9209030A10052759E /* Layer Animation */ = {
+			isa = PBXGroup;
+			children = (
+				773E75DC209030CC0052759E /* TargetType.swift */,
+				773E75D720902E3A0052759E /* Animations_layer.plist */,
+			);
+			path = "Layer Animation";
+			sourceTree = "<group>";
+		};
 		77630E622084B255006B0071 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +145,7 @@
 			children = (
 				77630E6B2084B255006B0071 /* Animations.app */,
 				77106DED2089F30100634D18 /* Package.app */,
+				773E75D620902E3A0052759E /* LayerAnimations.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -110,9 +153,12 @@
 		77630E6D2084B255006B0071 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				773E75D8209030920052759E /* View Animation */,
+				773E75D9209030A10052759E /* Layer Animation */,
 				77630E6E2084B255006B0071 /* AppDelegate.swift */,
 				77106DE82089D5D100634D18 /* Flight info */,
 				77630E702084B255006B0071 /* ViewController.swift */,
+				773E75E0209031390052759E /* ViewControllerExtension.swift */,
 				77630E722084B255006B0071 /* Main.storyboard */,
 				77630E752084B257006B0071 /* Assets.xcassets */,
 				77630E772084B257006B0071 /* LaunchScreen.storyboard */,
@@ -139,6 +185,23 @@
 			name = Package;
 			productName = Package;
 			productReference = 77106DED2089F30100634D18 /* Package.app */;
+			productType = "com.apple.product-type.application";
+		};
+		773E75C620902E3A0052759E /* LayerAnimations */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 773E75D320902E3A0052759E /* Build configuration list for PBXNativeTarget "LayerAnimations" */;
+			buildPhases = (
+				773E75C720902E3A0052759E /* Sources */,
+				773E75CD20902E3A0052759E /* Frameworks */,
+				773E75CE20902E3A0052759E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LayerAnimations;
+			productName = Animations;
+			productReference = 773E75D620902E3A0052759E /* LayerAnimations.app */;
 			productType = "com.apple.product-type.application";
 		};
 		77630E6A2084B255006B0071 /* Animations */ = {
@@ -172,6 +235,9 @@
 						CreatedOnToolsVersion = 9.3;
 						ProvisioningStyle = Automatic;
 					};
+					773E75C620902E3A0052759E = {
+						ProvisioningStyle = Automatic;
+					};
 					77630E6A2084B255006B0071 = {
 						CreatedOnToolsVersion = 9.3;
 						ProvisioningStyle = Automatic;
@@ -193,6 +259,7 @@
 			targets = (
 				77630E6A2084B255006B0071 /* Animations */,
 				77106DEC2089F30100634D18 /* Package */,
+				773E75C620902E3A0052759E /* LayerAnimations */,
 			);
 		};
 /* End PBXProject section */
@@ -205,6 +272,17 @@
 				77106DFA2089F30500634D18 /* LaunchScreen.storyboard in Resources */,
 				77106DF72089F30500634D18 /* Assets.xcassets in Resources */,
 				77106DF52089F30200634D18 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		773E75CE20902E3A0052759E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				773E75CF20902E3A0052759E /* LaunchScreen.storyboard in Resources */,
+				773E75D020902E3A0052759E /* Assets.xcassets in Resources */,
+				773E75D120902E3A0052759E /* KeyFrameViewController.xib in Resources */,
+				773E75D220902E3A0052759E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,11 +310,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		773E75C720902E3A0052759E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				773E75DD209030CC0052759E /* TargetType.swift in Sources */,
+				773E75C820902E3A0052759E /* ViewController.swift in Sources */,
+				773E75E2209031390052759E /* ViewControllerExtension.swift in Sources */,
+				773E75C920902E3A0052759E /* FlightData.swift in Sources */,
+				773E75CA20902E3A0052759E /* KeyFrameViewController.swift in Sources */,
+				773E75CB20902E3A0052759E /* AppDelegate.swift in Sources */,
+				773E75CC20902E3A0052759E /* SnowView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		77630E672084B255006B0071 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				773E75DB209030BD0052759E /* TargetType.swift in Sources */,
 				77630E712084B255006B0071 /* ViewController.swift in Sources */,
+				773E75E1209031390052759E /* ViewControllerExtension.swift in Sources */,
 				77106DE72089CF8700634D18 /* FlightData.swift in Sources */,
 				77106DE22089CA8F00634D18 /* KeyFrameViewController.swift in Sources */,
 				77630E6F2084B255006B0071 /* AppDelegate.swift in Sources */,
@@ -308,6 +402,38 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MagicTouch.Package;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		773E75D420902E3A0052759E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9ZGUBBUP42;
+				INFOPLIST_FILE = Animations_layer.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = MagicTouch.Animations;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		773E75D520902E3A0052759E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9ZGUBBUP42;
+				INFOPLIST_FILE = Animations_layer.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = MagicTouch.Animations;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -467,6 +593,15 @@
 			buildConfigurations = (
 				77106DFD2089F30500634D18 /* Debug */,
 				77106DFE2089F30500634D18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		773E75D320902E3A0052759E /* Build configuration list for PBXNativeTarget "LayerAnimations" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				773E75D420902E3A0052759E /* Debug */,
+				773E75D520902E3A0052759E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
