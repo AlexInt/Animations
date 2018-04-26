@@ -13,6 +13,24 @@ func delay(_ seconds: Double, completion: @escaping ()->Void) {
     DispatchQueue.main.asyncAfter(deadline: .now() + seconds, execute: completion)
 }
 
+func tintBackgroundColor(layer: CALayer, toColor: UIColor) {
+    let tint = CABasicAnimation(keyPath: "backgroundColor");
+    tint.fromValue = layer.backgroundColor;
+    tint.toValue = toColor.cgColor;
+    tint.duration = 0.5;
+    layer.add(tint, forKey: nil);
+    layer.backgroundColor = toColor.cgColor;
+}
+
+func roundCorners(layer: CALayer, toRadius: CGFloat) {
+    let round = CABasicAnimation(keyPath: "cornerRadius");
+    round.fromValue = layer.cornerRadius;
+    round.toValue = toRadius;
+    round.duration = 0.5;
+    layer.add(round, forKey: nil);
+    layer.cornerRadius = toRadius;
+}
+
 class ViewController: UIViewController {
     
     // MARK: IB outlets
@@ -70,14 +88,12 @@ extension ViewController {
         super.viewWillAppear(animated)
         
         //将label和textfield移到左边一个屏幕宽度
-        toggleAnimations(byType: TargetType.num)
+        viewAnimationInitialValueSet()        //view animation do
         
-        //对云形的图片---设置动画初始值
-        cloud1.alpha = 0.0;
-        cloud2.alpha = 0.0;
-        cloud3.alpha = 0.0;
-        cloud4.alpha = 0.0;
+        layerAnimationsForLabelAndTextField();//layer animation do
         
+        cloudsLayerAnimation();
+                
         //对button的处理--设置动画初始值
         loginButton.center.y += 30.0;
         loginButton.alpha = 0.0;
@@ -85,21 +101,8 @@ extension ViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.showViewAnimation(byType: TargetType.num)
         
-        
-        UIView.animate(withDuration: 0.5, delay: 0.5, options: [], animations: {
-            self.cloud1.alpha = 1;
-        }, completion: nil);
-        UIView.animate(withDuration: 0.5, delay: 0.7, options: [], animations: {
-            self.cloud2.alpha = 1;
-        }, completion: nil);
-        UIView.animate(withDuration: 0.5, delay: 0.9, options: [], animations: {
-            self.cloud3.alpha = 1;
-        }, completion: nil);
-        UIView.animate(withDuration: 0.5, delay: 1.1, options: [], animations: {
-            self.cloud4.alpha = 1;
-        }, completion: nil);
+        showViewAnimation();
         
         /*
          usingSpringWithDamping: 弹簧的硬度或粘度(可以立即为阻力) 0.0 - 1.0
@@ -125,21 +128,23 @@ extension ViewController {
         view.endEditing(true)
         
         UIView.animate(withDuration: 1.5, delay: 0.0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.0, options: [], animations: {
-            self.loginButton.bounds.size.width += 90.0;
+            self.loginButton.bounds.size.width += 80.0;
         }) { _ in
-            self.loginButton.isEnabled = false;
+             self.showMessage(index: 0);  //首次展示给一个初始值0;
         };
         
         UIView.animate(withDuration: 0.3, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: [], animations: {
             self.loginButton.center.y += 60.0;
-            self.loginButton.backgroundColor = UIColor(red: 0.85, green: 0.83, blue: 0.45, alpha: 1.0);
+            
+            self.toggleColorForButton(login: true);
+            
             self.spinner.center = CGPoint(
                 x: 40.0,
                 y: self.loginButton.frame.size.height/2);
             self.spinner.alpha = 1.0;
-        }){_ in
-            self.showMessage(index: 0);  //首次展示给一个初始值0;
-        };
+        },completion:nil);
+        
+        startToggleColorAndShape();
     }
 }
 
@@ -190,16 +195,20 @@ extension ViewController {
         UIView.animate(withDuration: 0.2, delay: 0.0, options: [.curveEaseOut, .transitionCurlUp], animations: {
             self.status.isHidden = true;
             self.status.center = self.statusPosition;
-        }, completion:nil );
+        }) {_ in
+            self.endToggleColorAndShape();
+        };
         
         //spinner 和 button 复位
         UIView.animate(withDuration: 0.2, delay: 0.0, options: [], animations: {
             self.spinner.center = CGPoint(x: -20.0, y: 16.0);
             self.spinner.alpha = 0.0;
-            self.loginButton.backgroundColor = UIColor(red: 0.63, green: 0.84, blue: 0.35, alpha: 1.0);
+            self.toggleColorForButton(login: false);
             self.loginButton.bounds.size.width -= 80.0;
-            self.loginButton.bounds.origin.y -= 60.0;
-        }, completion: nil);
+            self.loginButton.center.y -= 60.0;
+        }) {_ in
+           
+        };
     }
     
     private func animateCloud(cloud: UIImageView) {
@@ -213,7 +222,7 @@ extension ViewController {
         };
     }
     
-    //播放启动画面动画
+    //播放启动画面动画  doesn't work
     private func launchAnimation() {
         //获取启动视图
         let vc = UIStoryboard(name: "LaunchScreen", bundle: nil)
@@ -240,6 +249,9 @@ extension ViewController {
         }
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true);
+    }
 }
 
 // MARK: UITextFieldDelegate

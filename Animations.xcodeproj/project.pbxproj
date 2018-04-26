@@ -28,8 +28,10 @@
 		773E75D220902E3A0052759E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77630E722084B255006B0071 /* Main.storyboard */; };
 		773E75DB209030BD0052759E /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773E75DA209030BD0052759E /* TargetType.swift */; };
 		773E75DD209030CC0052759E /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773E75DC209030CC0052759E /* TargetType.swift */; };
-		773E75E1209031390052759E /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773E75E0209031390052759E /* ViewControllerExtension.swift */; };
-		773E75E2209031390052759E /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773E75E0209031390052759E /* ViewControllerExtension.swift */; };
+		773E75F02091A0130052759E /* ViewAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773E75EF2091A0130052759E /* ViewAnimation.swift */; };
+		773E75F12091A0130052759E /* ViewAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773E75EF2091A0130052759E /* ViewAnimation.swift */; };
+		773E75F32091A0F60052759E /* LayerAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773E75F22091A0F60052759E /* LayerAnimation.swift */; };
+		773E75F42091A0F60052759E /* LayerAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773E75F22091A0F60052759E /* LayerAnimation.swift */; };
 		77630E6F2084B255006B0071 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77630E6E2084B255006B0071 /* AppDelegate.swift */; };
 		77630E712084B255006B0071 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77630E702084B255006B0071 /* ViewController.swift */; };
 		77630E742084B255006B0071 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77630E722084B255006B0071 /* Main.storyboard */; };
@@ -54,7 +56,8 @@
 		773E75D720902E3A0052759E /* Animations_layer.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Animations_layer.plist; path = /Users/jeremywang/Downloads/Animations/Animations_layer.plist; sourceTree = "<absolute>"; };
 		773E75DA209030BD0052759E /* TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
 		773E75DC209030CC0052759E /* TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
-		773E75E0209031390052759E /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
+		773E75EF2091A0130052759E /* ViewAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAnimation.swift; sourceTree = "<group>"; };
+		773E75F22091A0F60052759E /* LayerAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerAnimation.swift; sourceTree = "<group>"; };
 		77630E6B2084B255006B0071 /* Animations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Animations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77630E6E2084B255006B0071 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77630E702084B255006B0071 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -158,7 +161,8 @@
 				77630E6E2084B255006B0071 /* AppDelegate.swift */,
 				77106DE82089D5D100634D18 /* Flight info */,
 				77630E702084B255006B0071 /* ViewController.swift */,
-				773E75E0209031390052759E /* ViewControllerExtension.swift */,
+				773E75EF2091A0130052759E /* ViewAnimation.swift */,
+				773E75F22091A0F60052759E /* LayerAnimation.swift */,
 				77630E722084B255006B0071 /* Main.storyboard */,
 				77630E752084B257006B0071 /* Assets.xcassets */,
 				77630E772084B257006B0071 /* LaunchScreen.storyboard */,
@@ -315,8 +319,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				773E75DD209030CC0052759E /* TargetType.swift in Sources */,
+				773E75F12091A0130052759E /* ViewAnimation.swift in Sources */,
 				773E75C820902E3A0052759E /* ViewController.swift in Sources */,
-				773E75E2209031390052759E /* ViewControllerExtension.swift in Sources */,
+				773E75F42091A0F60052759E /* LayerAnimation.swift in Sources */,
 				773E75C920902E3A0052759E /* FlightData.swift in Sources */,
 				773E75CA20902E3A0052759E /* KeyFrameViewController.swift in Sources */,
 				773E75CB20902E3A0052759E /* AppDelegate.swift in Sources */,
@@ -329,8 +334,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				773E75DB209030BD0052759E /* TargetType.swift in Sources */,
+				773E75F02091A0130052759E /* ViewAnimation.swift in Sources */,
 				77630E712084B255006B0071 /* ViewController.swift in Sources */,
-				773E75E1209031390052759E /* ViewControllerExtension.swift in Sources */,
+				773E75F32091A0F60052759E /* LayerAnimation.swift in Sources */,
 				77106DE72089CF8700634D18 /* FlightData.swift in Sources */,
 				77106DE22089CA8F00634D18 /* KeyFrameViewController.swift in Sources */,
 				77630E6F2084B255006B0071 /* AppDelegate.swift in Sources */,
@@ -417,6 +423,10 @@
 				INFOPLIST_FILE = Animations_layer.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				"OTHER_CFLAGS[arch=*]" = (
+					"-D",
+					DEBUG,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = MagicTouch.Animations;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
